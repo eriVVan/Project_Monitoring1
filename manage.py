@@ -35,7 +35,7 @@ urlpatterns = [
 
 class ModelName(models.Model):
     field1 = models.CharField(max_length=100)
-    field2 = models.CharField(max_length=100)
+    field2 = models.CharField(max_length=100) #сортировка данных для двух модулей терминала
 
 
 def write_model_data_to_file():
@@ -43,4 +43,6 @@ def write_model_data_to_file():
         objects = ModelName.objects.all()
         for obj in objects:
             file.write(f'{obj.field1} {obj.field2}\n')
+
+
 write_model_data_to_file()
